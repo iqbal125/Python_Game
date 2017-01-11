@@ -45,7 +45,7 @@ def play_game(quiz, answers, blanks):
     print quiz
     while True:
         #Prints out question and question number
-        user_answer = input("Please type in answer for " + blanks[index])
+        user_answer = raw_input("Please type in answer for " + blanks[index])
         if user_answer == answers[index]:
             print "That is correct!"
             #To print out the correct answer in the blank space
@@ -63,7 +63,7 @@ def play_game(quiz, answers, blanks):
 
 #Difficulty Selector
 def UserSelection():
-    user_input = input("Please select difficulty of quiz, easy | medium | hard: ")
+    user_input = raw_input("Please select difficulty of quiz, easy | medium | hard: ")
     if user_input == "easy":
         play_game(easy_quiz, easy_answers, blanks)
     elif user_input == "medium":
