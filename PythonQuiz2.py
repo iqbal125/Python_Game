@@ -35,23 +35,25 @@ blanks = ["_1_", "_2_", "_3_", "_4_"]
 #Opening Message
 print "Hello and welcome to the python quiz. All questions will be fill in the blank."
 
-#Quiz Engine
+
+
+#Quiz Engine, Plays game, inputs: quiz level, answers and blank lists from UserSelection, outputs: quiz with blanks filled in.
 def play_game(quiz, answers, blanks):
     #To keep track of which question user is on
     index = 0
     #To make sure the app doesnt run past the total number of questions
     Total_Questions = 4
-    #To print quiz without answers
+    #Prints quiz without answers
     print quiz
     while True:
         #Prints out question and question number
         user_answer = raw_input("Please type in answer for " + blanks[index])
         if user_answer == answers[index]:
             print "That is correct!"
-            #To print out the correct answer in the blank space
+            #prints out the correct answer in the blank space
             quiz = quiz.replace(blanks[index], user_answer)
             print quiz
-            #To keep track of the question
+            #Keeps track of the question
             index += 1
             #Exit Condition
             if index == Total_Questions:
@@ -61,7 +63,7 @@ def play_game(quiz, answers, blanks):
         else:
             print "Sorry that is incorrect, please try again."
 
-#Difficulty Selector
+#Difficulty Selector, input: diffculty selected, output: quiz, answers, blanks for the difficulty selected.
 def UserSelection():
     user_input = raw_input("Please select difficulty of quiz, easy | medium | hard: ")
     if user_input == "easy":
